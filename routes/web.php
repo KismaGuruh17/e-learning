@@ -18,7 +18,7 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin', 'as' => '
     Route::resource('mata_kuliah', \App\Http\Controllers\Admin\MataKuliahController::class)->except('show');
     Route::resource('mahasiswa', \App\Http\Controllers\Admin\MahasiswaController::class);
     Route::resource('tahun_akademik', \App\Http\Controllers\Admin\TahunAkademikController::class);
-    
+
     // krs
     Route::get('krs/create/{nim}/{tahun_akademik}', [\App\Http\Controllers\Admin\KrsController::class, 'create'])->name('krs.create');
     Route::get('krs', [\App\Http\Controllers\Admin\KrsController::class, 'index'])->name('krs.index');
@@ -27,16 +27,16 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin', 'as' => '
     Route::get('krs/{krs:id}/edit', [\App\Http\Controllers\Admin\KrsController::class, 'edit'])->name('krs.edit');
     Route::put('krs/{krs:id}', [\App\Http\Controllers\Admin\KrsController::class, 'update'])->name('krs.update');
     Route::delete('krs/{krs:id}', [\App\Http\Controllers\Admin\KrsController::class, 'destroy'])->name('krs.destroy');
-    
+
     // khs
     Route::get('khs', [\App\Http\Controllers\Admin\KhsController::class, 'index'])->name('khs.index');
     Route::post('khs', [\App\Http\Controllers\Admin\KhsController::class, 'find'])->name('khs.find');
-    
+
     // input nilai
     Route::get('input_nilai', [\App\Http\Controllers\Admin\InputNilaiController::class, 'index'])->name('input_nilai.index');
     Route::post('input_nilai', [\App\Http\Controllers\Admin\InputNilaiController::class, 'all'])->name('input_nilai.all');
     Route::post('input_nilai/store', [\App\Http\Controllers\Admin\InputNilaiController::class, 'store'])->name('input_nilai.store');
-    
+
     // transkrip nilai
     Route::get('transkrip_nilai', [\App\Http\Controllers\Admin\TranskripNilaiController::class, 'index'])->name("transkrip_nilai.index");
     Route::post('transkrip_nilai', [\App\Http\Controllers\Admin\TranskripNilaiController::class, 'find'])->name("transkrip_nilai.find");
@@ -47,7 +47,7 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin', 'as' => '
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-    
+
     Route::post('/users/store', [UserController::class, 'store'])->name('admin.users.store');
     Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
     Route::put('users/{user}', [UserController::class, 'update'])->name('admin.users.update');
