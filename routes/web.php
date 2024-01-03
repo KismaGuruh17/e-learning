@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();

@@ -41,63 +41,63 @@
                     <li class="nav-item">
                         <a href="{{ route('admin.jurusan.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Jurusan</p>
+                            <p>Kelas</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ route('admin.program_study.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Program Studi</p>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a href="{{ route('admin.mata_kuliah.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Mata Kuliah</p>
+                            <p>Mata Pelajaran</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.mahasiswa.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Mahasiswa</p>
+                            <p>Siswa</p>
                         </a>
-                    </li>
+                    {{-- </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.tahun_akademik.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Tahun Akademik</p>
                         </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+                    {{-- <li class="nav-item">
                         <a href="{{ route('admin.krs.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>KRS</p>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a href="{{ route('admin.input_nilai.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Input Nilai</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ route('admin.khs.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>KHS</p>
                         </a>
-                    </li>
+                    </li> --}}
                     <!-- <li class="nav-item">
                         <a href="{{ route('admin.transkrip_nilai.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Cetak Transkrip</p>
                         </a>
                     </li> -->
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Dosen</p>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
             <li class="nav-item">

@@ -9,17 +9,17 @@
                 <legend><strong>DAFTAR NILAI MAHASISWA</strong></legend>
                 <table>
                     <tr>
-                        <td>Kode Mata Kuliah</td>
+                        <td>Kode Mata Pelajaran</td>
                         <td>: {{ $krs->mata_kuliah->kode_mata_kuliah }}</td>
                     </tr>
                     <tr>
-                        <td>Nama Mata Kuliah</td>
+                        <td>Nama Mata Pelajaran</td>
                         <td>: {{ $krs->mata_kuliah->nama_mata_kuliah }}</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td>SKS</td>
                         <td>: {{ $krs->mata_kuliah->sks }}</td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                         <td>Tahun Akademik (Semester)</td>
                         <td>: {{ $krs->tahun_akademik->tahun_akademik }}({{$krs->tahun_akademik->semester}})</td>
@@ -30,7 +30,7 @@
             <table class="table table-hover table-bordered table-striped mt-4">
                 <tr>
                     <td>NO</td>
-                    <td>NIM</td>
+                    <td>NISN</td>
                     <td>NAMA LENGKAP</td>
                     <td>NILAI</td>
                 </tr>
@@ -43,7 +43,7 @@
                     </tr>
                 @endforeach
             </table>
-            
+
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
