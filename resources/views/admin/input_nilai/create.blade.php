@@ -21,7 +21,7 @@
                 <div class="col-lg-12">
                     <div class="card p-3">
                     <form method="post" action="{{ route('admin.krs.store') }}">
-                            @csrf 
+                            @csrf
                             <div class="form-group row border-bottom pb-4">
                                 <label for="nim" class="col-sm-2 col-form-label">Nim</label>
                                 <div class="col-sm-10">
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">
-                                <label for="mata_kuliah_id" class="col-sm-2 col-form-label">Mata Kuliah</label>
+                                <label for="mata_kuliah_id" class="col-sm-2 col-form-label">Mata Pelajaran</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="mata_kuliah_id" id="mata_kuliah_id">
                                         @foreach($data_mata_kuliah as $mata_kuliah)

@@ -20,7 +20,7 @@
                 <div class="col-lg-12">
                     <div class="card p-3">
                         <form method="post" action="{{ route('admin.input_nilai.all') }}">
-                            @csrf 
+                            @csrf
                             <div class="form-group row border-bottom pb-4">
                                 <label for="tahun_akademik_id" class="col-sm-2 col-form-label">Tahun Akademik</label>
                                 <div class="col-sm-10">
@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">
-                                <label for="kode_mata_kuliah" class="col-sm-2 col-form-label">Kode Mata Kuliah</label>
+                                <label for="kode_mata_kuliah" class="col-sm-2 col-form-label">Kode Mata Pelajaran</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="kode_mata_kuliah" class="form-control" value="{{ old('kode_mata_kuliah') }}">
                                 </div>

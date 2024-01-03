@@ -6,35 +6,35 @@
         <div class="container-fluid">
             <center class="mb-2">
                 <legend class="mt-3"><strong>MASUKKAN NILAI AKHIR</strong></legend>
-               
+
                 <table>
                     <tr>
-                        <td>Kode Mata Kuliah</td>
+                        <td>Kode Mata Pelajaran</td>
                         <td>&nbsp;: {{ $data['kode_mata_kuliah'] }}</td>
                     </tr>
                     <tr>
-                        <td>Nama Mata Kuliah</td>
+                        <td>Nama Mata Pelajaran</td>
                         <td>&nbsp;: {{ $data['nama_mata_kuliah'] }}</td>
                     </tr>
-                    <tr>
-                        <td>SKS</td>
+                    {{-- <tr>
+                        <td>NISN</td>
                         <td>&nbsp;: {{ $data['sks'] }}</td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                         <td>Tahun Akademik (Semester)</td>
                         <td>&nbsp;: {{ $data['tahun_akademik'] }}({{ $data['semester'] }})</td>
                     </tr>
-                
+
                 </table>
             </center>
-            
+
             <form action="{{ route('admin.input_nilai.store') }}" method="post">
-                @csrf 
+                @csrf
                 <table class="table table-striped table-hover table-bordered mt-4">
                     <tr>
                         <td width="25px">NO</td>
-                        <td>NIM</td>
-                        <td>NAMA MAHASISWA</td>
+                        <td>NISN</td>
+                        <td>NAMA SISWA</td>
                         <td>NILAI</td>
                     </tr>
                     @foreach($data['list_nilai'] as $nilai)
@@ -52,7 +52,7 @@
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
-            
+
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
