@@ -35,13 +35,15 @@ class MataKuliahController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request;
+
+        $namaFile = $request->file('materi')->store('materi');
+
         MataKuliah::create([
             'nama_mata_kuliah' => $request->nama_mata_kuliah,
             'sks' => $request->sks,
             'semester' => $request->semester,
             'kelas' => $request->kelas,
-            'materi' => $request->file('materi')->store('materi')
+            'materi' => $namaFile
         ]);
 
         return redirect()->route('admin.mata_kuliah.index')->with([
@@ -57,7 +59,7 @@ class MataKuliahController extends Controller
     {
         $program_studies = ProgramStudy::get(['id', 'nama_prody']);
 
-        return view('admin.mata_kuliah.edit', compact('mata_kuliah','program_studies'));
+        return view('admin.mata_kuliah.edit', compact('mata_kuliah', 'program_studies'));
     }
 
     /**
