@@ -22,11 +22,11 @@ class MataKuliahRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode_mata_kuliah' => 'required',
-            'nama_mata_kuliah' => 'required',
+            'nama_mata_pelajaran' => 'required',
             'sks' => 'required',
             'semester' => 'required',
-            'program_study_id' => 'required',
+            'kelas' => 'required',
+            'materi' => 'required',
         ];
     }
 }

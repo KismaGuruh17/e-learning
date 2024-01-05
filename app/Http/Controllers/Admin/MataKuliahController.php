@@ -33,9 +33,16 @@ class MataKuliahController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(MataKuliahRequest $request)
+    public function store(Request $request)
     {
-        MataKuliah::create($request->validated());
+        //return $request;
+        MataKuliah::create([
+            'nama_mata_kuliah' => $request->nama_mata_kuliah,
+            'sks' => $request->sks,
+            'semester' => $request->semester,
+            'kelas' => $request->kelas,
+            'materi' => $request->file('materi')->store('materi')
+        ]);
 
         return redirect()->route('admin.mata_kuliah.index')->with([
             'message' => 'berhasi di buat !',
