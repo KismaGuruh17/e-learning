@@ -47,7 +47,7 @@ class MataKuliahController extends Controller
         ]);
 
         return redirect()->route('admin.mata_kuliah.index')->with([
-            'message' => 'berhasi di buat !',
+            'message' => 'berhasil di buat !',
             'alert-type' => 'success'
         ]);
     }
