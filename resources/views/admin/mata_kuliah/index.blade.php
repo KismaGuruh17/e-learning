@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 justify-content-between d-flex">
-                    <h1 class="m-0">{{ __('Mata Kuliah') }}</h1>
+                    <h1 class="m-0">{{ __('Mata Pelajaran') }}</h1>
                     <a href="{{ route('admin.mata_kuliah.create') }}" class="btn btn-primary btn-sm"> <i class="fa fa-plus"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->

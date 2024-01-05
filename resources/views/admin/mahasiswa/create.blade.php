@@ -80,7 +80,7 @@
                                 <div class="col-sm-10">
                                     <select class="form-control" name="program_study_id" id="program_study_id">
                                         @foreach($program_studies as $program_study)
-                                            <option {{ old("program_study") == $program_study->id ? 'selected' : null }} value="{{ $program_study->id }}">{{ $program_study->nama_prody }}</option>
+                                            <option {{ old("program_study") == $program_study->id ? 'selected' : null }} value="{{ $program_study->id }}">{{ $program_study->Kelas }}</option>
                                         @endforeach
                                     </select>
                                 </div>
