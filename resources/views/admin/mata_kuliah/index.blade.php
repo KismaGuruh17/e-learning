@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 justify-content-between d-flex">
-                    <h1 class="m-0">{{ __('Mata Kuliah') }}</h1>
+                    <h1 class="m-0">{{ __('Mata Pelajaran') }}</h1>
                     <a href="{{ route('admin.mata_kuliah.create') }}" class="btn btn-primary btn-sm"> <i class="fa fa-plus"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,11 +27,11 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode Mata Kuliah</th>
-                                        <th>Nama Mata Kuliah</th>
+                                        <th>NAMA MATA PELAJARAN</th>
                                         <th>SKS</th>
                                         <th>SEMESTER</th>
-                                        <th>Program Study</th>
+                                        <th>KELAS</th>
+                                        <th>MATERI</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -39,11 +39,11 @@
                                 @foreach($data_mata_kuliah as $mata_kuliah)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $mata_kuliah->kode_mata_kuliah }}</td>
                                         <td>{{ $mata_kuliah->nama_mata_kuliah }}</td>
                                         <td>{{ $mata_kuliah->sks }}</td>
                                         <td>{{ $mata_kuliah->semester }}</td>
-                                        <td>{{ $mata_kuliah->program_study->nama_prody }}</td>
+                                        <td>{{ $mata_kuliah->kelas }}</td>
+                                        <td>{{ $mata_kuliah->materi }}</td>
                                         <td>
                                             <a href="{{ route('admin.mata_kuliah.edit', [$mata_kuliah]) }}" class="btn btn-sm btn-info"> <i class="fa fa-edit"></i> </a>              
                                             <form onclick="return confirm('are you sure ?');" class="d-inline-block" action="{{ route('admin.mata_kuliah.destroy', [$mata_kuliah]) }}" method="post">

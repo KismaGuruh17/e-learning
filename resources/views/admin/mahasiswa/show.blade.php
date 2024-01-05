@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 justify-content-between d-flex">
-                    <h1 class="m-0">{{ __('Mahasiswa') }}</h1>
+                    <h1 class="m-0">{{ __('Siswa') }}</h1>
                     <a href="{{ route('admin.mahasiswa.index') }}" class="btn btn-primary"> <i class="fa fa-arrow-left"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -30,7 +30,7 @@
                                         <td>{{ $mahasiswa->nama_lengkap }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Nim</th>
+                                        <th>NISN</th>
                                         <td>{{ $mahasiswa->nim }}</td>
                                     </tr>
                                     <tr>
@@ -54,7 +54,7 @@
                                         <td>{{ $mahasiswa->jenis_kelamin }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Program Study</th>
+                                        <th>Kelas</th>
                                         <td>{{ $mahasiswa->program_study->nama_prody }}</td>
                                     </tr>
                                     <tr>
