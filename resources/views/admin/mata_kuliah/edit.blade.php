@@ -52,7 +52,7 @@
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">
-                                <label for="program_study_id" class="col-sm-2 col-form-label">Program Study</label>
+                                <label for="program_study_id" class="col-sm-2 col-form-label">KELAS</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="nama_mata_kuliah" value="{{ old('nama_mata_kuliah') }}" id="nama_mata_kuliah">
                                 </div>
