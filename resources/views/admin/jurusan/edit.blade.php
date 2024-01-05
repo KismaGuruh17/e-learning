@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 d-flex justify-content-between">
-                    <h1 class="m-0">{{ __('Edit Jurusan') }}</h1>
+                    <h1 class="m-0">{{ __('Edit Kelas') }}</h1>
                     <a href="{{ route('admin.jurusan.index') }}" class="btn btn-primary"> <i class="fa fa-arrow-left"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -24,13 +24,13 @@
                             @csrf 
                             @method('put')
                             <div class="form-group row border-bottom pb-4">
-                                <label for="nama_jurusan" class="col-sm-2 col-form-label">Nama Jurusan</label>
+                                <label for="nama_jurusan" class="col-sm-2 col-form-label">Kelas</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" name="nama_jurusan" value="{{ old('nama_jurusan', $jurusan->nama_jurusan) }}" id="nama_jurusan">
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">
-                                <label for="kode_jurusan" class="col-sm-2 col-form-label">Kode Jurusan</label>
+                                <label for="kode_jurusan" class="col-sm-2 col-form-label">Kode Kelas</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" name="kode_jurusan" value="{{ old('kode_jurusan', $jurusan->kode_jurusan) }}" id="kode_jurusan">
                                 </div>
