@@ -55,19 +55,28 @@ class MataKuliahController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(MataKuliah $mata_kuliah)
+    public function edit()
     {
         $program_studies = ProgramStudy::get(['id', 'nama_prody']);
 
-        return view('admin.mata_kuliah.edit', compact('mata_kuliah', 'program_studies'));
+        return view('admin.mata_kuliah.edit', compact('program_studies'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(MataKuliahRequest $request, MataKuliah $mata_kuliah)
+    public function update(Request $request)
     {
-        $mata_kuliah->update($request->validated());
+
+        $namaFile = $request->file('materi')->update('materi');
+
+        MataKuliah::edit([
+            'nama_mata_kuliah' => $request->nama_mata_kuliah,
+            'sks' => $request->sks,
+            'semester' => $request->semester,
+            'kelas' => $request->kelas,
+            'materi' => $namaFile
+        ]);
 
         return redirect()->route('admin.mata_kuliah.index')->with([
             'message' => 'berhasil di ganti !',
@@ -83,7 +92,7 @@ class MataKuliahController extends Controller
         $mata_kuliah->delete();
 
         return redirect()->back()->with([
-            'message' => 'berhasi di hapus !',
+            'message' => 'berhasil di hapus !',
             'alert-type' => 'danger'
         ]);
     }
