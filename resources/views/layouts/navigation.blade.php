@@ -44,12 +44,12 @@
                             <p>Kelas</p>
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
+                     <li class="nav-item">
                         <a href="{{ route('admin.program_study.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Program Studi</p>
                         </a>
-                    </li> --}}
+                    </li> 
                     <li class="nav-item">
                         <a href="{{ route('admin.mata_kuliah.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
@@ -61,31 +61,31 @@
                             <i class="far fa-circle nav-icon"></i>
                             <p>Siswa</p>
                         </a>
-                    {{-- </li>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.tahun_akademik.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Tahun Akademik</p>
                         </a>
-                    </li> --}}
-                    {{-- <li class="nav-item">
+                    </li>
+                     <li class="nav-item">
                         <a href="{{ route('admin.krs.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>KRS</p>
                         </a>
-                    </li> --}}
+                    </li> 
                     <li class="nav-item">
                         <a href="{{ route('admin.input_nilai.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Input Nilai</p>
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
+                     <li class="nav-item">
                         <a href="{{ route('admin.khs.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>KHS</p>
                         </a>
-                    </li> --}}
+                    </li> 
                     <!-- <li class="nav-item">
                         <a href="{{ route('admin.transkrip_nilai.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
