@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">
-                                <label for="kode_mata_kuliah" class="col-sm-2 col-form-label">Kode Mata Pelajaran</label>
+                                <label for="kode_mata_kuliah" class="col-sm-2 col-form-label">Nama Mata Pelajaran</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="kode_mata_kuliah" class="form-control" value="{{ old('kode_mata_kuliah') }}">
                                 </div>
