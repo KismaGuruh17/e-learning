@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card p-3">
-                        <form method="post" action="{{ route('admin.mata_kuliah.update', [$mata_kuliah]) }}">
+                        <form method="post" action=" route['admin.mata_kuliah.update', $mata_kuliah]">
                             @csrf 
                             @method('put')
                             <div class="form-group row border-bottom pb-4">
