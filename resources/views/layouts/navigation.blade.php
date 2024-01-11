@@ -86,6 +86,12 @@
                             <p>KHS</p>
                         </a>
                     </li> 
+                    <li class="nav-item">
+                        <a href="{{ route('admin.tugas.index') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Tugas</p>
+                        </a>
+                    </li>
                     <!-- <li class="nav-item">
                         <a href="{{ route('admin.transkrip_nilai.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
