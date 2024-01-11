@@ -22,12 +22,12 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin', 'as' => '
     Route::resource('tugas', \App\Http\Controllers\TugasController::class);
 
     //tugas
-    Route::get('tugas/create/{nama_mata_pelajaran}/{kelas}/{deskripsi}', [\App\Http\Controllers\TugasController::class, 'create'])->name('tugas.create');
+    Route::get('tugas/create', [\App\Http\Controllers\TugasController::class, 'create'])->name('tugas.create');
     Route::get('tugas', [\App\Http\Controllers\TugasController::class, 'index'])->name('tugas.index');
     Route::post('tugas/store', [\App\Http\Controllers\TugasController::class, 'store'])->name('tugas.store');
-    Route::get('tugas/edit', [\App\Http\Controllers\TugasController::class, 'edit'])->name('tugas.edit');
-    Route::put('tugas/update', [\App\Http\Controllers\TugasController::class, 'update'])->name('tugas.update');
-    Route::delete('tugas/delete', [\App\Http\Controllers\TugasController::class, 'destroy'])->name('tugas.destroy');
+    Route::get('tugas/edit/{id}', [\App\Http\Controllers\TugasController::class, 'edit'])->name('tugas.edit');
+    Route::put('tugas/update/{id}', [\App\Http\Controllers\TugasController::class, 'update'])->name('tugas.update');
+    Route::delete('tugas/delete/{id}', [\App\Http\Controllers\TugasController::class, 'destroy'])->name('tugas.destroy');
 
     // krs
     Route::get('krs/create/{nim}/{tahun_akademik}', [\App\Http\Controllers\Admin\KrsController::class, 'create'])->name('krs.create');
