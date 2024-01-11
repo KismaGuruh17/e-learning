@@ -79,18 +79,19 @@ class TugasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'nama_mata_pelajaran' => 'required',
-            'kelas' => 'required',
-            'deskripsi' => 'required',
-        ]);
+{
+    $request->validate([
+        'nama_mata_pelajaran' => 'required',
+        'kelas' => 'required',
+        'deskripsi' => 'required',
+    ]);
 
-        $tugas = Tugas::findOrFail($id);
-        $tugas->update($request->all());
+    $tugas = Tugas::findOrFail($id);
+    $tugas->update($request->all());
 
-        return redirect()->route('admin.tugas.index')->with('success', 'Tugas berhasil diupdate');
-    }
+    return redirect()->route('admin.tugas.index')->with('success', 'Tugas berhasil diupdate');
+}
+
 
     /**
      * Remove the specified resource from storage.
