@@ -6,36 +6,23 @@ use App\Models\MataKuliah;
 use App\Models\ProgramStudy;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\MataKuliahRequest;
 
 class MataKuliahController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $data_mata_kuliah = MataKuliah::with('program_study')->get();
-
         return view('admin.mata_kuliah.index', compact('data_mata_kuliah'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $program_studies = ProgramStudy::get(['id', 'nama_prody']);
-
         return view('admin.mata_kuliah.create', compact('program_studies'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-
         $namaFile = $request->file('materi')->store('materi');
 
         MataKuliah::create([
@@ -47,30 +34,39 @@ class MataKuliahController extends Controller
         ]);
 
         return redirect()->route('admin.mata_kuliah.index')->with([
-            'message' => 'berhasil di buat !',
+            'message' => 'Berhasil dibuat!',
             'alert-type' => 'success'
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit()
+    public function edit($id)
     {
-        $program_studies = ProgramStudy::get(['id', 'nama_prody']);
+        $mata_kuliah = MataKuliah::find($id);
 
-        return view('admin.mata_kuliah.edit', compact('program_studies'));
+        if (!$mata_kuliah) {
+            return redirect()->route('admin.mata_kuliah.index')->with([
+                'message' => 'Mata kuliah tidak ditemukan',
+                'alert-type' => 'danger'
+            ]);
+        }
+
+        return view('admin.mata_kuliah.edit', compact('mata_kuliah'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
+        $mata_kuliah = MataKuliah::find($id);
 
-        $namaFile = $request->file('materi')->update('materi');
+        if (!$mata_kuliah) {
+            return redirect()->route('admin.mata_kuliah.index')->with([
+                'message' => 'Mata kuliah tidak ditemukan',
+                'alert-type' => 'danger'
+            ]);
+        }
 
-        MataKuliah::edit([
+        $namaFile = $request->file('materi')->store('materi');
+
+        $mata_kuliah->update([
             'nama_mata_kuliah' => $request->nama_mata_kuliah,
             'sks' => $request->sks,
             'semester' => $request->semester,
@@ -79,20 +75,17 @@ class MataKuliahController extends Controller
         ]);
 
         return redirect()->route('admin.mata_kuliah.index')->with([
-            'message' => 'berhasil di ganti !',
+            'message' => 'Berhasil diupdate!',
             'alert-type' => 'info'
         ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(MataKuliah $mata_kuliah)
     {
         $mata_kuliah->delete();
 
-        return redirect()->back()->with([
-            'message' => 'berhasil di hapus !',
+        return redirect()->route('admin.mata_kuliah.index')->with([
+            'message' => 'Berhasil dihapus!',
             'alert-type' => 'danger'
         ]);
     }

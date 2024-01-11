@@ -23,7 +23,8 @@
 <<<<<<< HEAD
                         <form method="post" action=" route['admin.mata_kuliah.update', $mata_kuliah]">
 =======
-                    <form method="post" action="{{ route('admin.mata_kuliah.update', [$mata_kuliah]) }}">
+                   <form method="post" action="{{ route('admin.mata_kuliah.update', [$mata_kuliah]) }}">
+
 >>>>>>> dev-MayRiska
                             @csrf 
                             @method('put')
