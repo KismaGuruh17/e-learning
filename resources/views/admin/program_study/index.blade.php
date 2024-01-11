@@ -27,8 +27,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode Prody</th>
-                                        <th>Nama Prody</th>
+                                        <th>Kode Kelas</th>
+                                        <th>Nama Kelas</th>
                                         <th>Jurusan</th>
                                         <th>Action</th>
                                     </tr>
@@ -37,8 +37,8 @@
                                 @foreach($program_studies as $program_study)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $program_study->kode_prody }}</td>
-                                        <td>{{ $program_study->nama_prody }}</td>
+                                        <td>{{ $program_study->kode_kelas }}</td>
+                                        <td>{{ $program_study->nama_kelas }}</td>
                                         <td>{{ $program_study->jurusan->nama_jurusan }}</td>
                                         <td>
                                             <a href="{{ route('admin.program_study.edit', [$program_study]) }}" class="btn btn-sm btn-info"> <i class="fa fa-edit"></i> </a>              

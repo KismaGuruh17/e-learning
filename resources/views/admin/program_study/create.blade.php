@@ -23,13 +23,13 @@
                         <form method="post" action="{{ route('admin.program_study.store') }}">
                             @csrf 
                             <div class="form-group row border-bottom pb-4">
-                                <label for="kode_prody" class="col-sm-2 col-form-label">Kode Prody</label>
+                                <label for="kode_prody" class="col-sm-2 col-form-label">Kode Kelas</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" name="kode_prody" value="{{ old('kode_prody') }}" id="kode_prody">
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">
-                                <label for="nama_prody" class="col-sm-2 col-form-label">Nama Prody</label>
+                                <label for="nama_prody" class="col-sm-2 col-form-label">Nama Kelas</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" name="nama_prody" value="{{ old('nama_prody') }}" id="nama_prody">
                                 </div>
