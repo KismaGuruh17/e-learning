@@ -47,6 +47,7 @@
                                             <td>
                                                 <a href="/storage/{{ $mata_kuliah->materi }}"
                                                     target="_blank">{{ $mata_kuliah->materi }}
+                                                    
                                             </td>
                                             <td>
                                                 <a href="{{ route('admin.mata_kuliah.edit', [$mata_kuliah]) }}"
