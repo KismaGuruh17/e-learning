@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 justify-content-between d-flex">
-                    <h1 class="m-0">{{ __('Program Study') }}</h1>
+                    <h1 class="m-0">{{ __('Kelas') }}</h1>
                     <a href="{{ route('admin.program_study.create') }}" class="btn btn-primary btn-sm"> <i class="fa fa-plus"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -37,8 +37,8 @@
                                 @foreach($program_studies as $program_study)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $program_study->kode_kelas }}</td>
-                                        <td>{{ $program_study->nama_kelas }}</td>
+                                        <td>{{ $program_study->kode_prody }}</td>
+                                        <td>{{ $program_study->nama_prody }}</td>
                                         <td>{{ $program_study->jurusan->nama_jurusan }}</td>
                                         <td>
                                             <a href="{{ route('admin.program_study.edit', [$program_study]) }}" class="btn btn-sm btn-info"> <i class="fa fa-edit"></i> </a>              

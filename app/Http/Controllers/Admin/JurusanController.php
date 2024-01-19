@@ -36,7 +36,7 @@ class JurusanController extends Controller
         Jurusan::create($request->validated());
 
         return redirect()->route('admin.jurusan.index')->with([
-            'message' => 'berhasi di buat !',
+            'message' => 'berhasil di buat !',
             'alert-type' => 'success'
         ]);
     }
@@ -62,10 +62,7 @@ class JurusanController extends Controller
         ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-   /**
+/**
  * Remove the specified resource from storage.
  */
 public function destroy(Jurusan $jurusan)

@@ -41,13 +41,13 @@
                     <li class="nav-item">
                         <a href="{{ route('admin.jurusan.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Kelas</p>
+                            <p>Jurusan</p>
                         </a>
                     </li>
                      <li class="nav-item">
                         <a href="{{ route('admin.program_study.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Program Studi</p>
+                            <p>Kelas</p>
                         </a>
                     </li> 
                     <li class="nav-item">

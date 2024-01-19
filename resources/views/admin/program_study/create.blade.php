@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 d-flex justify-content-between">
-                    <h1 class="m-0">{{ __('Tambah Program Study') }}</h1>
+                    <h1 class="m-0">{{ __('Tambah Kelas') }}</h1>
                     <a href="{{ route('admin.program_study.index') }}" class="btn btn-primary"> <i class="fa fa-arrow-left"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
