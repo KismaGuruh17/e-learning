@@ -22,7 +22,7 @@
                         <form method="post" action="{{ route('admin.khs.find') }}">
                             @csrf 
                             <div class="form-group row border-bottom pb-4">
-                                <label for="nim" class="col-sm-2 col-form-label">Nim</label>
+                                <label for="nim" class="col-sm-2 col-form-label">NIS</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="nim" value="{{ old('nim') }}" id="nim">
                                 </div>

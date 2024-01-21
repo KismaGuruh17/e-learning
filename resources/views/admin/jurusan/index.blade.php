@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 justify-content-between d-flex">
-                    <h1 class="m-0">{{ __('Kelas') }}</h1>
+                    <h1 class="m-0">{{ __('Jurusan') }}</h1>
                     <a href="{{ route('admin.jurusan.create') }}" class="btn btn-primary btn-sm"> <i class="fa fa-plus"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,8 +27,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode Kelas</th>
-                                        <th>Kelas</th>
+                                        <th>Kode Jurusan</th>
+                                        <th>Jurusan</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

@@ -1,11 +1,11 @@
 <!-- Sidebar -->
 <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
             <a href="{{ route('admin.profile.show') }}" class="d-block">{{ Auth::user()->name }}</a>
         </div>
-    </div>
+    </div> -->
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -29,7 +29,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-university nav-icon"></i>
                     <p>
@@ -37,17 +37,17 @@
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
-                <ul class="nav nav-treeview" style="display: none;">
+                <ul class="nav nav-treeview" style="display: none;"> -->
                     <li class="nav-item">
                         <a href="{{ route('admin.jurusan.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Kelas</p>
+                            <p>Jurusan</p>
                         </a>
                     </li>
                      <li class="nav-item">
                         <a href="{{ route('admin.program_study.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Program Studi</p>
+                            <p>Kelas</p>
                         </a>
                     </li> 
                     <li class="nav-item">
@@ -106,7 +106,7 @@
                     </li> --}}
                 </ul>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-cog nav-icon"></i>
                     <p>
@@ -120,7 +120,7 @@
                             <i class="far fa-circle nav-icon"></i>
                             <p>User</p>
                         </a>
-                    </li>
+                    </li> -->
     <!-- /.sidebar-menu -->
 </div>
 <!-- Include your scripts and other necessary tags here -->
