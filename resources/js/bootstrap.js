@@ -1,34 +1,31 @@
-import 'bootstrap';
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
+import _ from 'lodash';
+import 'bootstrap'; // Bootstrap sudah menyertakan Popper di dalamnya
 import axios from 'axios';
+
+window._ = _;
 window.axios = axios;
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+// Optional: Jika Anda perlu menggunakan jQuery secara langsung, Anda dapat mengimpornya seperti ini
+// import $ from 'jquery';
+// window.jQuery = window.$ = $;
 
 /**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
+ * Jika Anda membutuhkan Popper secara langsung (tanpa mengimpor dari @popperjs/core), Anda dapat menggunakan ini:
+ * import Popper from 'popper.js';
+ * window.Popper = Popper;
  */
 
+/**
+ * Jika Anda membutuhkan Echo dan Pusher untuk real-time web applications, Anda dapat mengimpor dan mengkonfigurasinya seperti ini:
+ */
 // import Echo from 'laravel-echo';
-
 // import Pusher from 'pusher-js';
+
 // window.Pusher = Pusher;
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: import.meta.env.VITE_PUSHER_APP_KEY,
-//     cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER ?? 'mt1',
-//     wsHost: import.meta.env.VITE_PUSHER_HOST ?? `ws-${import.meta.env.VITE_PUSHER_APP_CLUSTER}.pusher.com`,
-//     wsPort: import.meta.env.VITE_PUSHER_PORT ?? 80,
-//     wssPort: import.meta.env.VITE_PUSHER_PORT ?? 443,
-//     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
-//     enabledTransports: ['ws', 'wss'],
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     forceTLS: true
 // });
