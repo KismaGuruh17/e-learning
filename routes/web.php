@@ -1,22 +1,66 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin', 'as' => 'admin.'], function() {
+    // jurusan crud
+    Route::resource('jurusan', \App\Http\Controllers\Admin\JurusanController::class)->except('show');
+    Route::resource('program_study', \App\Http\Controllers\Admin\ProgramStudyController::class)->except('show');
+    Route::resource('mata_kuliah', \App\Http\Controllers\Admin\MataKuliahController::class)->except('show');
+    Route::resource('mahasiswa', \App\Http\Controllers\Admin\MahasiswaController::class);
+    Route::resource('tahun_akademik', \App\Http\Controllers\Admin\TahunAkademikController::class);
+    Route::resource('tugas', \App\Http\Controllers\TugasController::class);
+
+    //tugas
+    Route::get('tugas/create', [\App\Http\Controllers\TugasController::class, 'create'])->name('tugas.create');
+    Route::get('tugas', [\App\Http\Controllers\TugasController::class, 'index'])->name('tugas.index');
+    Route::post('tugas/store', [\App\Http\Controllers\TugasController::class, 'store'])->name('tugas.store');
+    Route::get('tugas/edit/{id}', [\App\Http\Controllers\TugasController::class, 'edit'])->name('tugas.edit');
+    Route::put('tugas/update/{id}', [\App\Http\Controllers\TugasController::class, 'update'])->name('tugas.update');
+    Route::delete('tugas/delete/{id}', [\App\Http\Controllers\TugasController::class, 'destroy'])->name('tugas.destroy');
+
+    // krs
+    Route::get('krs/create/{nim}/{tahun_akademik}', [\App\Http\Controllers\Admin\KrsController::class, 'create'])->name('krs.create');
+    Route::get('krs', [\App\Http\Controllers\Admin\KrsController::class, 'index'])->name('krs.index');
+    Route::post('krs', [\App\Http\Controllers\Admin\KrsController::class, 'find'])->name('krs.find');
+    Route::post('krs/store', [\App\Http\Controllers\Admin\KrsController::class, 'store'])->name('krs.store');
+    Route::get('krs/{krs:id}/edit', [\App\Http\Controllers\Admin\KrsController::class, 'edit'])->name('krs.edit');
+    Route::put('krs/{krs:id}', [\App\Http\Controllers\Admin\KrsController::class, 'update'])->name('krs.update');
+    Route::delete('krs/{krs:id}', [\App\Http\Controllers\Admin\KrsController::class, 'destroy'])->name('krs.destroy');
+
+    // khs
+    Route::get('khs', [\App\Http\Controllers\Admin\KhsController::class, 'index'])->name('khs.index');
+    Route::post('khs', [\App\Http\Controllers\Admin\KhsController::class, 'find'])->name('khs.find');
+
+    // input nilai
+    Route::get('input_nilai', [\App\Http\Controllers\Admin\InputNilaiController::class, 'index'])->name('input_nilai.index');
+    Route::post('input_nilai', [\App\Http\Controllers\Admin\InputNilaiController::class, 'all'])->name('input_nilai.all');
+    Route::post('input_nilai/store', [\App\Http\Controllers\Admin\InputNilaiController::class, 'store'])->name('input_nilai.store');
+
+    // transkrip nilai
+    Route::get('transkrip_nilai', [\App\Http\Controllers\Admin\TranskripNilaiController::class, 'index'])->name("transkrip_nilai.index");
+    Route::post('transkrip_nilai', [\App\Http\Controllers\Admin\TranskripNilaiController::class, 'find'])->name("transkrip_nilai.find");
+
+    Route::view('about', 'about')->name('about');
+
+    Route::resource('users', UserController::class);
+
+    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
+    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
+    Route::post('/users/store', [UserController::class, 'store'])->name('admin.users.store');
+    Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::put('users/{user}', [UserController::class, 'update'])->name('admin.users.update');
+    // Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::resource('users', UserController::class);
+});
