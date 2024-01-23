@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 d-flex justify-content-between">
-                    <h1 class="m-0">{{ __('Edit mahasiswa') }}</h1>
+                    <h1 class="m-0">{{ __('Edit Siswa') }}</h1>
                     <a href="{{ route('admin.mahasiswa.index') }}" class="btn btn-primary"> <i class="fa fa-arrow-left"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">
-                                <label for="nim" class="col-sm-2 col-form-label">Nim</label>
+                                <label for="nim" class="col-sm-2 col-form-label">NISN</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" name="nim" value="{{ old('nim', $mahasiswa->nim) }}" id="nim">
                                 </div>
@@ -77,7 +77,7 @@
                             </div>
                             
                             <div class="form-group row border-bottom pb-4">
-                                <label for="program_study_id" class="col-sm-2 col-form-label">Program Study</label>
+                                <label for="program_study_id" class="col-sm-2 col-form-label">Kelas</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="program_study_id" id="program_study_id">
                                         @foreach($program_studies as $program_study)

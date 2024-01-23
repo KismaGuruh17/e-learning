@@ -76,10 +76,13 @@
                             </div>
                             
                             <div class="form-group row border-bottom pb-4">
-                                <label for="program_study_id" class="col-sm-2 col-form-label">KELAS</label>
+                                <label for="program_study_id" class="col-sm-2 col-form-label">Kelas</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="kelas" value="{{ old('kelas') }}"
-                                        id="kelas">
+                                    <select class="form-control" name="program_study_id" id="program_study_id">
+                                        @foreach($program_studies as $program_study)
+                                            <option {{ old("program_study") == $program_study->id ? 'selected' : null }} value="{{ $program_study->id }}">{{ $program_study->nama_prody }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">
@@ -98,4 +101,3 @@
     </div>
     <!-- /.content -->
 @endsection
-
